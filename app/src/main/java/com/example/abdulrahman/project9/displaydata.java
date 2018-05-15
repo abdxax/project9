@@ -11,11 +11,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class displaydata extends AppCompatActivity {
     EditText itemname;
     EditText price;
-    EditText quenty;
+    TextView quenty;
     EditText suppliername;
     EditText supplierphone;
     DBManger manger;
@@ -27,7 +28,7 @@ public class displaydata extends AppCompatActivity {
         setContentView(R.layout.activity_displaydata);
         itemname = findViewById(R.id.editText21);
         price = findViewById(R.id.editText31);
-        quenty = findViewById(R.id.editText41);
+        quenty = findViewById(R.id.qunty);
         suppliername = findViewById(R.id.editText51);
         supplierphone = findViewById(R.id.editText61);
         manger = new DBManger(this);
@@ -63,7 +64,7 @@ public class displaydata extends AppCompatActivity {
             values.put(ItemContact.CoulnIproductSupplierPhone, suphon);
             long i = manger.update(values, id);
             if (i >= 1) {
-                startActivity(new Intent(displaydata.this, MainActivity.class));
+                startActivity(new Intent(displaydata.this, Main2Activity.class));
                 finish();
             }
 
@@ -105,7 +106,7 @@ public class displaydata extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 long i = manger.delte(id);
                 if (i >= 1) {
-                    startActivity(new Intent(displaydata.this, MainActivity.class));
+                    startActivity(new Intent(displaydata.this, Main2Activity.class));
                     finish();
                 }
             }
@@ -130,9 +131,21 @@ public class displaydata extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.back:
-                startActivity(new Intent(displaydata.this, MainActivity.class));
+                startActivity(new Intent(displaydata.this, Main2Activity.class));
                 finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void butPlas(View view) {
+        int q=Integer.parseInt(quenty.getText().toString());
+        q++;
+        quenty.setText(q+"");
+    }
+
+    public void butMins(View view) {
+        int q=Integer.parseInt(quenty.getText().toString());
+        q--;
+        quenty.setText(q+"");
     }
 }

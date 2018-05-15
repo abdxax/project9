@@ -50,4 +50,9 @@ public class DBManger {
         long i = database.delete(ItemContact.DBTable, ItemContact.CoulnID + "=" + id, null);
         return i;
     }
+    public long updateQunda(ContentValues values, int id) {
+        SQLiteDatabase database = helper.getWritableDatabase();
+        long i = database.update(ItemContact.DBTable, values, ItemContact.CoulnID + "=" + id, null);
+        return i;
+    }
 }

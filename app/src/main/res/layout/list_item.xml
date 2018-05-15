@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
     >
 
 
@@ -46,6 +47,13 @@
                     android:text="TextView" />
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="18dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="SALE" />
 
         </LinearLayout>
 

@@ -45,7 +45,7 @@ public class insetitem extends AppCompatActivity {
             values.put(ItemContact.CoulnIproductSupplierPhone, suphon);
             long i = manger.insert(values);
             if (i > 0) {
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(this, Main2Activity.class));
                 finish();
             } else {
                 Toast.makeText(getApplicationContext(), "Noting " + i, Toast.LENGTH_LONG).show();
@@ -88,7 +88,7 @@ public class insetitem extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.back:
-                startActivity(new Intent(insetitem.this, MainActivity.class));
+                startActivity(new Intent(insetitem.this, Main2Activity.class));
                 finish();
         }
         return super.onOptionsItemSelected(item);

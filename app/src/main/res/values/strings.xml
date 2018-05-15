@@ -14,6 +14,8 @@
     <string name="no">No</string>
     <string name="deteleItem">Delete Item</string>
     <string name="msgitem">You want to delete the</string>
+    <string name="storge">The database is empty.</string>
+    <string name="title_activity_main2">Main2Activity</string>
 
 
 </resources>
