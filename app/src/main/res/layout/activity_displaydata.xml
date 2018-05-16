@@ -70,15 +70,29 @@
         android:inputType="textPersonName"
         android:hint="@string/product_supplier_name" />
 
-    <EditText
-        android:id="@+id/editText61"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:text="0"
-        android:hint="@string/product_supplier_phone"
-        />
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:id="@+id/editText61"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:text="0"
+            android:hint="@string/product_supplier_phone"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/call"
+            android:onClick="butCall"
+
+            />
+    </LinearLayout>
 
     <Button
         android:id="@+id/update"

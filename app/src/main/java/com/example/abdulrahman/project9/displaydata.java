@@ -1,9 +1,12 @@
 package com.example.abdulrahman.project9;
 
+import android.Manifest;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -138,14 +141,33 @@ public class displaydata extends AppCompatActivity {
     }
 
     public void butPlas(View view) {
-        int q=Integer.parseInt(quenty.getText().toString());
+        int q = Integer.parseInt(quenty.getText().toString());
         q++;
-        quenty.setText(q+"");
+        quenty.setText(q + "");
     }
 
     public void butMins(View view) {
-        int q=Integer.parseInt(quenty.getText().toString());
-        q--;
-        quenty.setText(q+"");
+        int q = Integer.parseInt(quenty.getText().toString());
+        if (q <= 1) {
+
+        } else {
+            q--;
+            quenty.setText(q + "");
+        }
+    }
+
+    public void butCall(View view) {
+        String phonebum = supplierphone.getText().toString().trim();
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + phonebum));
+
+        try {
+            startActivity(intent);
+        } catch (SecurityException ex) {
+            String call[] = {Manifest.permission.CALL_PHONE};
+            ActivityCompat.requestPermissions(this, call, 1);
+        }
+
     }
 }
+
